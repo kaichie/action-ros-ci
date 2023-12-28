@@ -226,7 +226,7 @@ async function checkRosdeps(
 	package_paths=$(colcon list --paths-only ${filterNonEmptyJoin(
 		packageSelection
 	)})
-	rosdep check --from-paths $package_paths --ignore-src --skip-keys "${filterNonEmptyJoin(
+	rosdep check --from-paths $package_paths --skip-keys "${filterNonEmptyJoin(
 		skipKeys
 	)}" --rosdistro $DISTRO`;
 	fs.writeFileSync(scriptPath, scriptContent, { mode: 0o766 });

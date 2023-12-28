@@ -11330,7 +11330,7 @@ function checkRosdeps(packageSelection, skipKeys, workspaceDir, options, ros1Dis
 	fi
 	DISTRO=$1
 	package_paths=$(colcon list --paths-only ${filterNonEmptyJoin(packageSelection)})
-	rosdep check --from-paths $package_paths --ignore-src --skip-keys "${filterNonEmptyJoin(skipKeys)}" --rosdistro $DISTRO`;
+	rosdep check --from-paths $package_paths --skip-keys "${filterNonEmptyJoin(skipKeys)}" --rosdistro $DISTRO`;
         fs_1.default.writeFileSync(scriptPath, scriptContent, { mode: 0o766 });
         let exitCode = 0;
         if (ros1Distro) {
